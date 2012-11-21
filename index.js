@@ -5,7 +5,7 @@ var convert = require('color-convert')
  * Generate noise upon a supplied canvas instance.
  * Noise will be drawn to canvas on next tick.
  *
- * @param canvas
+ * @param {CanvasElement} canvas
  * @api public
  */
 
@@ -40,7 +40,7 @@ function Noise(options) {
  *
  * Number between 0 and 1.
  *
- * @param opacity {Number} between 0 and 1.
+ * @param {Number} opacity between 0 and 1.
  * @api public
  */
 
@@ -54,7 +54,7 @@ Noise.prototype.opacity = function(opacity) {
  *
  * Number between 0 and 1.
  *
- * @param saturation {Number}
+ * @param {Number} saturation
  * @api public
  */
 
@@ -68,7 +68,7 @@ Noise.prototype.saturation = function(saturation) {
  *
  * Number between 0 and 1.
  *
- * @param brightness {Number}
+ * @param {Number} brightness
  * @api public
  */
 

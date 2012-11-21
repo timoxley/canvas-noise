@@ -29,19 +29,19 @@ noise(canvas8).opacity(1).brightness(0.3).grayscale()
 
 ## API
 
-### Noise#opacity({Number}:opacity)
+### Noise#opacity(opacity:Number)
 
   Opacity of generated noise.
 
   Number between 0 and 1.
 
-### Noise#saturation({Number}:saturation)
+### Noise#saturation(saturation:Number)
 
   Saturation of generated noise.
 
   Number between 0 and 1.
 
-### Noise#brightness({Number}:brightness)
+### Noise#brightness(brightness:Number)
 
   Brightness of generated noise.
 
