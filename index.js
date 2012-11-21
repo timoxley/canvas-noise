@@ -135,7 +135,7 @@ Noise.prototype.generate = function generate() {
         ? brightness * Math.random() + brightness * 0.5
         : brightness
 
-      var color = convert.hslToRgb(hue, saturation, adjustedBrightness)
+      var color = convert.HSLtoRGB(hue, saturation, adjustedBrightness)
       var r = color[0], g = color[1], b = color[2] // destructuring plz
 
       // Browser wants integers
