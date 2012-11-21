@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <canvas id="noise1" width="50" height="50"></canvas>
+    <canvas id="noise2" width="50" height="50"></canvas>
+    <canvas id="noise3" width="50" height="50"></canvas>
+    <canvas id="noise4" width="50" height="50"></canvas>
+    <canvas id="noise5" width="50" height="50"></canvas>
+    <canvas id="noise6" width="50" height="50"></canvas>
+    <canvas id="noise7" width="50" height="50"></canvas>
+    <canvas id="noise8" width="50" height="50"></canvas>
+    <script src="../../build/build.js" ></script>
+    <script>
+      // requestAnimationFrame normalizer
+      (function() {
+        var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+                                    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+        window.requestAnimationFrame = requestAnimationFrame;
+      })();
+
+      var noise = require('canvas-noise')
+      var canvas1 = document.getElementById('noise1')
+      var canvas2 = document.getElementById('noise2')
+      var canvas3 = document.getElementById('noise3')
+      var canvas4 = document.getElementById('noise4')
+      var canvas5 = document.getElementById('noise5')
+      var canvas6 = document.getElementById('noise6')
+      var canvas7 = document.getElementById('noise7')
+      var canvas8 = document.getElementById('noise8')
+
+      /*
+        wtf?
+
+        By default, noise() will auto-draw to the canvas
+        on the next tick. To allow us to clear the canvas prior to drawing on it
+        we have to do the clear/draw operations in the same tick.
+        To do this we can prevent the auto-drawing by calling the generate()
+        function ourselves.
+
+        Below, we gather all the noise instances together, then
+        clear each one before drawing to it.
+
+        This also demonstrates the fact that generate() will
+        continue to use the same settings as were supplied
+        during the original noise() call.
+      */
+      function render() {
+        return [
+          noise(canvas1),
+          noise(canvas2).grayscale(),
+          noise(canvas3).opacity(1),
+          noise(canvas4).opacity(1).brightness(0.5),
+          noise(canvas5).brightness(0.2).opacity(1),
+          noise(canvas6).opacity(1).saturation(1),
+          noise(canvas7).saturation(1),
+          noise(canvas8).opacity(1).brightness(0.3).grayscale()
+        ]
+      }
+
+      var renderers = []
+      function animate() {
+        if (!renderers.length) renderers = render()
+        for (var i = 0; i < renderers.length; i++) {
+          clear(renderers[i].canvas)
+          renderers[i].generate()
+        }
+        requestAnimationFrame(animate)
+      }
+
+      function clear(canvas) {
+        var ctx = canvas.getContext('2d')
+        // Store the current transformation matrix
+        ctx.save();
+
+        // Use the identity matrix while clearing the canvas
+        //ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Restore the transform
+        ctx.restore();
+      }
+      animate()
+    </script>
+  </body>
+</html>

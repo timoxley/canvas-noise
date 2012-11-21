@@ -1,0 +1,16 @@
+{
+  "name": "canvas-noise",
+  "repo": "timoxley/canvas-noise",
+  "description": "Generate noise on a canvas.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "timoxley/next-tick": "*",
+    "timoxley/color-convert": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}
