@@ -14,6 +14,8 @@
 ```js
 var noise = require('canvas-noise')
 
+// This generated the 8 images above
+
 noise(canvas1)
 noise(canvas2).grayscale()
 noise(canvas3).opacity(1)
