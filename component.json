@@ -2,7 +2,7 @@
   "name": "canvas-noise",
   "repo": "timoxley/canvas-noise",
   "description": "Generate noise on a canvas.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [],
   "dependencies": {
     "timoxley/next-tick": "*",
