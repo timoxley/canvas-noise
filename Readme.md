@@ -1,9 +1,8 @@
-
 # canvas-noise
 
   Generate noise on a canvas.
 
-![//raw.github.com/timoxley/canvas-noise/master/examples/example.png](//raw.github.com/timoxley/canvas-noise/master/examples/example.png)
+![https://raw.github.com/timoxley/canvas-noise/master/examples/example.png](https://raw.github.com/timoxley/canvas-noise/master/examples/example.png)
 
 ## Installation
 
