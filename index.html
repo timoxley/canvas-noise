@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Canvas-noise by timoxley</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Canvas-noise</h1>
+        <p>Generate noise on a canvas.</p>
+
+        <p class="view"><a href="https://github.com/timoxley/canvas-noise">View the Project on GitHub <small>timoxley/canvas-noise</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/timoxley/canvas-noise/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/timoxley/canvas-noise/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/timoxley/canvas-noise">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="canvas-noise" class="anchor" href="#canvas-noise"><span class="octicon octicon-link"></span></a>canvas-noise</h1>
+
+<p>Generate noise on a canvas.</p>
+
+<p><img src="https://raw.github.com/timoxley/canvas-noise/master/examples/example.png" alt="https://raw.github.com/timoxley/canvas-noise/master/examples/example.png"></p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>$ component install timoxley/canvas-noise
+</code></pre>
+
+<h2>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">noise</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'canvas-noise'</span><span class="p">)</span>
+
+<span class="c1">// This generated the 8 images above</span>
+
+<span class="nx">noise</span><span class="p">(</span><span class="nx">canvas1</span><span class="p">)</span>
+<span class="nx">noise</span><span class="p">(</span><span class="nx">canvas2</span><span class="p">).</span><span class="nx">grayscale</span><span class="p">()</span>
+<span class="nx">noise</span><span class="p">(</span><span class="nx">canvas3</span><span class="p">).</span><span class="nx">opacity</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nx">noise</span><span class="p">(</span><span class="nx">canvas4</span><span class="p">).</span><span class="nx">opacity</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">brightness</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="nx">noise</span><span class="p">(</span><span class="nx">canvas5</span><span class="p">).</span><span class="nx">brightness</span><span class="p">(</span><span class="mf">0.2</span><span class="p">).</span><span class="nx">opacity</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nx">noise</span><span class="p">(</span><span class="nx">canvas6</span><span class="p">).</span><span class="nx">opacity</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">saturation</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nx">noise</span><span class="p">(</span><span class="nx">canvas7</span><span class="p">).</span><span class="nx">saturation</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nx">noise</span><span class="p">(</span><span class="nx">canvas8</span><span class="p">).</span><span class="nx">opacity</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">brightness</span><span class="p">(</span><span class="mf">0.3</span><span class="p">).</span><span class="nx">grayscale</span><span class="p">()</span>
+
+</pre></div>
+
+<h2>
+<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h2>
+
+<h3>
+<a name="noiseopacityopacitynumber" class="anchor" href="#noiseopacityopacitynumber"><span class="octicon octicon-link"></span></a>Noise#opacity(opacity:Number)</h3>
+
+<p>Opacity of generated noise.</p>
+
+<p>Number between 0 and 1.</p>
+
+<h3>
+<a name="noisesaturationsaturationnumber" class="anchor" href="#noisesaturationsaturationnumber"><span class="octicon octicon-link"></span></a>Noise#saturation(saturation:Number)</h3>
+
+<p>Saturation of generated noise.</p>
+
+<p>Number between 0 and 1.</p>
+
+<h3>
+<a name="noisebrightnessbrightnessnumber" class="anchor" href="#noisebrightnessbrightnessnumber"><span class="octicon octicon-link"></span></a>Noise#brightness(brightness:Number)</h3>
+
+<p>Brightness of generated noise.</p>
+
+<p>Number between 0 and 1.</p>
+
+<h3>
+<a name="noisegrayscale" class="anchor" href="#noisegrayscale"><span class="octicon octicon-link"></span></a>Noise#grayscale()</h3>
+
+<p>Enables grayscale mode. Randomises brightness instead of hue.</p>
+
+<h3>
+<a name="noisecolor" class="anchor" href="#noisecolor"><span class="octicon octicon-link"></span></a>Noise#color()</h3>
+
+<p>Enables color mode. This is the default.
+  Use this to disable grayscale mode.</p>
+
+<h3>
+<a name="noisegenerate" class="anchor" href="#noisegenerate"><span class="octicon octicon-link"></span></a>Noise#generate()</h3>
+
+<p>Apply noise to canvas. Called implicitly on next tick on
+  instantiation unless called explicitly.</p>
+
+<p>See animated example for more details on this.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/timoxley">timoxley</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
